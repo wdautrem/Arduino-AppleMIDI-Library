@@ -124,7 +124,7 @@ public:
 		// of what we are to send (The RtpMidi protocol start with writing the
 		// length of the buffer). So we'll copy to a buffer in the 'write' method, 
 		// and actually serialize for real in the endTransmission method
-		return (dataPort.remoteIP() != INADDR_NONE && participants.size() > 0);
+		return (int(dataPort.remoteIP()) != INADDR_NONE && participants.size() > 0);
 	};
 
 	void write(byte byte)
